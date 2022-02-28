@@ -133,3 +133,6 @@ CREATE TABLE `tipocuenta` (
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2022-02-28  4:26:43
+
+INSERT INTO `tipocuenta` VALUES (1,'Ahorro',1),(2,'Corriente',1);
+INSERT INTO `estado` VALUES (1,'Activo'),(2,'Inactivo');
