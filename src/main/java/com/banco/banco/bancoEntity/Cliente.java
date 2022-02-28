@@ -46,19 +46,6 @@ public class Cliente {
 		// TODO Auto-generated constructor stub
 	}
 
-
-
-	public Cliente(long id_cliente, String contrasena_cliente, int estado_cliente, long id_persona, Persona persona) {
-		super();
-		this.id_cliente = id_cliente;
-		this.contrasena_cliente = contrasena_cliente;
-		this.estado_cliente = estado_cliente;
-		this.id_persona = id_persona;
-		this.persona = persona;
-	}
-
-
-
 	public long getId_cliente() {
 		return id_cliente;
 	}

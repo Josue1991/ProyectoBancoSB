@@ -34,15 +34,6 @@ public class TipoCuenta {
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public TipoCuenta(long id_tipoCuenta, String descripcion_tipoCuenta, int estado_tipoCuenta) {
-		super();
-		this.id_tipoCuenta = id_tipoCuenta;
-		this.descripcion_tipoCuenta = descripcion_tipoCuenta;
-		this.estado_tipoCuenta = estado_tipoCuenta;
-	}
-
-
 	public long getId_tipoCuenta() {
 		return id_tipoCuenta;
 	}

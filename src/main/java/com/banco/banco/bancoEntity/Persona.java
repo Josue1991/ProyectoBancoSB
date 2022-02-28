@@ -43,19 +43,6 @@ public class Persona {
 		super();
 	}
 
-	
-	public Persona(long id_persona, String nombre_persona, int edad_persona, String identificacion_persona,
-			String dIRRECCION_persona, String tELEFONO_persona, String genero_persona) {
-		super();
-		this.id_persona = id_persona;
-		this.nombre_persona = nombre_persona;
-		this.edad_persona = edad_persona;
-		this.identificacion_persona = identificacion_persona;
-		DIRRECCION_persona = dIRRECCION_persona;
-		TELEFONO_persona = tELEFONO_persona;
-		this.genero_persona = genero_persona;
-	}
-
 	public long getId_persona() {
 		return id_persona;
 	}

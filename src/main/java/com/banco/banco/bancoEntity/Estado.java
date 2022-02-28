@@ -31,12 +31,6 @@ public class Estado {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Estado(long id_estado, String descripcion_estado) {
-		super();
-		this.id_estado = id_estado;
-		this.descripcion_estado = descripcion_estado;
-	}
-
 	public long getId_estado() {
 		return id_estado;
 	}

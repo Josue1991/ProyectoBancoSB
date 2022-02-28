@@ -12,12 +12,7 @@ public class FiltroHistorialDTO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public FiltroHistorialDTO(Long cedula, String fecha_Desde, String fecha_Hasta) {
-		super();
-		this.cedula = cedula;
-		this.fecha_Desde = fecha_Desde;
-		this.fecha_Hasta = fecha_Hasta;
-	}
+
 	public long getCedula() {
 		return cedula;
 	}

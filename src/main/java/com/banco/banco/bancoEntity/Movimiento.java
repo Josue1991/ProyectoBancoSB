@@ -58,22 +58,6 @@ public class Movimiento {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Movimiento(long id_Movimiento, long id_cuenta, Date fecha_movimiento, String tipo_movimiento,
-			double saldo_movimiento, int estado_movimiento, String descripcion_movimiento,
-			double saldo_actual_movimiento, Cuenta cuenta) {
-		super();
-		this.id_Movimiento = id_Movimiento;
-		this.id_cuenta = id_cuenta;
-		this.fecha_movimiento = fecha_movimiento;
-		this.tipo_movimiento = tipo_movimiento;
-		this.saldo_movimiento = saldo_movimiento;
-		this.estado_movimiento = estado_movimiento;
-		this.descripcion_movimiento = descripcion_movimiento;
-		this.saldo_actual_movimiento = saldo_actual_movimiento;
-		this.cuenta = cuenta;
-	}
-
-
 	public long getId_Movimiento() {
 		return id_Movimiento;
 	}

@@ -15,18 +15,7 @@ public class MovimientoDTO {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public MovimientoDTO(String cliente, Date fecha, int numero_Cuenta, String tipo, double saldo_inicial, int estado,
-			String movimiento, double saldoDisponible) {
-		super();
-		Cliente = cliente;
-		Fecha = fecha;
-		Numero_Cuenta = numero_Cuenta;
-		Tipo = tipo;
-		this.saldo_inicial = saldo_inicial;
-		Estado = estado;
-		Movimiento = movimiento;
-		this.saldoDisponible = saldoDisponible;
-	}
+
 	public String getCliente() {
 		return Cliente;
 	}

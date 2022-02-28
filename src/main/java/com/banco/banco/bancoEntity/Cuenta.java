@@ -49,22 +49,6 @@ public class Cuenta {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-
-	public Cuenta(long id_cuenta, long id_cliente, int numero_cuenta, String tipo_cuenta, double saldo_inicial_cuenta,
-			int estado_cuenta, Cliente cliente) {
-		super();
-		this.id_cuenta = id_cuenta;
-		this.id_cliente = id_cliente;
-		this.numero_cuenta = numero_cuenta;
-		this.tipo_cuenta = tipo_cuenta;
-		this.saldo_inicial_cuenta = saldo_inicial_cuenta;
-		this.estado_cuenta = estado_cuenta;
-		this.cliente = cliente;
-	}
-
-
-
 	public long getId_cuenta() {
 		return id_cuenta;
 	}
