@@ -17,10 +17,9 @@ public class ClienteService implements IClienteService {
 
 	@Autowired
 	private ClienteRepository clienteRepository;
-	@Autowired 
+	@Autowired
 	private PersonaService personaService;
 
-	
 	@Override
 	public Cliente buscarCliente(String identificacionPersona) {
 		var cliente = new Cliente();
@@ -41,9 +40,15 @@ public class ClienteService implements IClienteService {
 		try {
 			var cliente = new Cliente();
 			var persona = nueva.getPersona();
-			var nuevaPersona = personaService.crearPersona(persona);
-			nueva.setId_persona(nuevaPersona.getId_persona());
-		    cliente = clienteRepository.save(nueva); 
+			var buscarPersona = personaService.buscarPersona(persona.getIdentificacion_persona());
+			if (Objects.nonNull(buscarPersona)) {
+				nueva.setId_persona(buscarPersona.getId_persona());
+				personaService.editarPersona(buscarPersona, buscarPersona.getIdentificacion_persona());
+			} else {
+				var nuevaPersona = personaService.crearPersona(persona);
+				nueva.setId_persona(nuevaPersona.getId_persona());
+			}			
+			cliente = clienteRepository.save(nueva);
 			if (Objects.nonNull(cliente)) {
 				retorno = cliente;
 			}
@@ -57,7 +62,7 @@ public class ClienteService implements IClienteService {
 	public Boolean editarCliente(Cliente editar, String identificaion) throws Exception {
 		boolean retorno = false;
 		try {
-			
+
 			Cliente depDB = clienteRepository.clienteIdPersona(identificaion);
 			if (Objects.nonNull(depDB)) {
 				var persona = new Persona();
@@ -68,7 +73,7 @@ public class ClienteService implements IClienteService {
 				persona.setDIRRECCION_persona(editar.getPersona().getDIRRECCION_persona());
 				persona.setTELEFONO_persona(editar.getPersona().getTELEFONO_persona());
 				persona.setGenero_persona(editar.getPersona().getGenero_persona());
-				personaService.editarPersona(persona,identificaion);
+				personaService.editarPersona(persona, identificaion);
 				if (Objects.nonNull(editar.getContrasena_cliente())
 						&& !"".equalsIgnoreCase(editar.getContrasena_cliente())) {
 					depDB.setContrasena_cliente(editar.getContrasena_cliente());
@@ -78,8 +83,7 @@ public class ClienteService implements IClienteService {
 				}
 				clienteRepository.save(depDB);
 				retorno = true;
-			}
-			else {
+			} else {
 				throw new Exception("Existe mas de un registro con ese numero de cedula");
 			}
 		} catch (Exception e) {
@@ -98,8 +102,7 @@ public class ClienteService implements IClienteService {
 				depDB.setEstado_cliente(2);
 				clienteRepository.save(depDB);
 				retorno = true;
-			}
-			else {
+			} else {
 				throw new Exception("Existe mas de un registro con ese numero de cedula");
 			}
 		} catch (Exception e) {

@@ -9,7 +9,7 @@ public interface ICuentaService {
 	Cuenta buscarCuenta(String identificacionPersona);
 	List<Cuenta> listarCuenta();
 	Cuenta crearCuenta(Cuenta nueva) throws Exception;
-	Boolean editarCuenta(Cuenta editar, String identificacion) throws Exception;
+	Cuenta editarCuenta(Cuenta editar, String identificacion) throws Exception;
 	Boolean eliminarCuenta(int identificacionPersona) throws Exception;
 	Cuenta buscarDatos(TransaccionDTO datos);
 		

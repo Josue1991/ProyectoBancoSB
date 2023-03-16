@@ -41,9 +41,15 @@ public class CuentaService implements ICuentaService {
 			var cuenta = new Cuenta();
 			var cliente = nueva.getCliente();
 			var persona = cliente.getPersona();
-			var nuevoCliente = clienteService.crearCliente(cliente);
-			nueva.setId_cliente(nuevoCliente.getId_cliente());
-			cuenta = cuentaRepository.save(nueva);
+			var buscarCuenta = cuentaRepository.cuentaxNumeroCuenta(nueva.getNumero_cuenta());
+			if (Objects.nonNull(buscarCuenta)) {				
+					cuenta = editarCuenta(nueva, buscarCuenta.getCliente().getPersona().getIdentificacion_persona());					
+			} 
+			else {
+				var nuevoCliente = clienteService.crearCliente(cliente);
+				nueva.setId_cliente(nuevoCliente.getId_cliente());
+				cuenta = cuentaRepository.save(nueva);
+			}
 			if (Objects.nonNull(cuenta)) {
 				retorno = cuenta;
 			}
@@ -54,12 +60,13 @@ public class CuentaService implements ICuentaService {
 	}
 
 	@Override
-	public Boolean editarCuenta(Cuenta editar, String identificacion) throws Exception {
-		boolean retorno = false;
+	public Cuenta editarCuenta(Cuenta editar, String identificacion) throws Exception {
+		Cuenta retorno = new Cuenta();
 		try {
 
-			Cuenta depDB = cuentaRepository.cuentaIdPersona(editar.getCliente().getPersona().getIdentificacion_persona());
-			
+			Cuenta depDB = cuentaRepository
+					.cuentaIdPersona(editar.getCliente().getPersona().getIdentificacion_persona());
+
 			if (Objects.nonNull(depDB)) {
 				clienteService.editarCliente(depDB.getCliente(), identificacion);
 				if (Objects.nonNull(editar.getEstado_cuenta())) {
@@ -77,9 +84,10 @@ public class CuentaService implements ICuentaService {
 				if (Objects.nonNull(editar.getSaldo_inicial_cuenta()) || editar.getSaldo_inicial_cuenta() != 0) {
 					depDB.setSaldo_inicial_cuenta(editar.getSaldo_inicial_cuenta());
 				}
+				clienteService.editarCliente(editar.getCliente(), identificacion);
 
 				cuentaRepository.save(depDB);
-				retorno = true;
+				retorno = depDB;
 			} else {
 				throw new Exception("Existe mas de un registro con ese numero de cedula");
 			}

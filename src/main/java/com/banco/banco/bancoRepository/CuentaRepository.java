@@ -18,7 +18,7 @@ public interface CuentaRepository extends JpaRepository<Cuenta, Long> {
     Cuenta cuentaIdPersona(String identificacion);	
 	
 	@Query(value = "Select * FROM Cuenta c "
-			+ " WHERE c.numero_cuenta = ?1",nativeQuery = true)
+			+ " WHERE c.NUMERO_CUENTA = ?1",nativeQuery = true)
     Cuenta cuentaxNumeroCuenta(Integer numeroCuenta);	
 		
 }
