@@ -2,12 +2,7 @@ package com.banco.banco.bancoRepository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-
-import com.banco.banco.bancoEntity.Cliente;
 import com.banco.banco.bancoEntity.Cuenta;
-
-import net.bytebuddy.implementation.bytecode.constant.IntegerConstant;
 
 public interface CuentaRepository extends JpaRepository<Cuenta, Long> {
 	

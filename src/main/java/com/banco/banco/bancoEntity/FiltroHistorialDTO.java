@@ -1,7 +1,5 @@
 package com.banco.banco.bancoEntity;
 
-import java.sql.Date;
-
 public class FiltroHistorialDTO {
 	
 	private Long cedula;

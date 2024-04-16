@@ -1,0 +1,297 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Pruebas",
+		"_postman_id": "9e39c36e-e11d-6b4a-2304-eb4acd7b9974",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Personas",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:8080/api/persona/listaPersonas",
+					"request": {
+						"url": "http://localhost:8080/api/persona/crear",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"nombre_persona\": \"Segunda Prueba\",\n        \"edad_persona\": 40,\n        \"identificacion_persona\": \"1715252302\",\n        \"genero_persona\": \"Femenino\",\n        \"telefono_persona\": \"09988552251\",\n        \"dirreccion_persona\": \"Av Prueba123\"\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/persona/listaPersonas",
+					"request": {
+						"url": "http://localhost:8080/api/persona/listaPersonas",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"nombre_persona\": \"Segunda Prueba\",\n        \"edad_persona\": 40,\n        \"identificacion_persona\": \"1715252302\",\n        \"genero_persona\": \"Femenino\",\n        \"telefono_persona\": \"09988552251\",\n        \"dirreccion_persona\": \"Av Prueba123\"\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/persona/listaPersonas",
+					"request": {
+						"url": "http://localhost:8080/api/persona/editar/125236252",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"nombre_persona\": \"Primera Prueba 123\",\n        \"edad_persona\": 35,\n        \"identificacion_persona\": \"12523625-2\",\n        \"genero_persona\": \"Masculino\",\n        \"telefono_persona\": \"25658123\",\n        \"dirreccion_persona\": \"Av Prueba Editar\"\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/persona/listaPersonas",
+					"request": {
+						"url": "http://localhost:8080/api/persona/eliminar/125236252",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"nombre_persona\": \"Primera Prueba 123\",\n        \"edad_persona\": 35,\n        \"identificacion_persona\": \"12523625-2\",\n        \"genero_persona\": \"Masculino\",\n        \"telefono_persona\": \"25658123\",\n        \"dirreccion_persona\": \"Av Prueba Editar\"\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:8080/api/persona/listaPersonas",
+					"request": {
+						"url": "http://localhost:8080/api/cliente/listaClientes",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"nombre_persona\": \"Segunda Prueba\",\n        \"edad_persona\": 40,\n        \"identificacion_persona\": \"1715252302\",\n        \"genero_persona\": \"Femenino\",\n        \"telefono_persona\": \"09988552251\",\n        \"dirreccion_persona\": \"Av Prueba123\"\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/persona/listaPersonas",
+					"request": {
+						"url": "http://localhost:8080/api/cliente/crear",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"contrasena_cliente\": \"123abcd\",\n        \"estado_cliente\": 1,\n        \"persona\": {\n            \"nombre_persona\": \"Prueba IngresoCliente\",\n            \"edad_persona\": 45,\n            \"identificacion_persona\": \"1715152302\",\n            \"genero_persona\": \"Masculino\",\n            \"dirreccion_persona\": \"Av Prueba Cliente\",\n            \"telefono_persona\": \"0988554561\"\n        }\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/persona/listaPersonas",
+					"request": {
+						"url": "http://localhost:8080/api/cliente/editar/1715152302",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"contrasena_cliente\": \"123xyux\",\n        \"estado_cliente\": 1,\n        \"persona\": {\n            \"nombre_persona\": \"PruebaEdicion123\",\n            \"edad_persona\": 35,\n            \"identificacion_persona\": \"171515212-2\",\n            \"genero_persona\": \"Masculino\",\n            \"dirreccion_persona\": \"Av Prueba WWW\",\n            \"telefono_persona\": \"0988599961\"\n        }\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/persona/listaPersonas",
+					"request": {
+						"url": "http://localhost:8080/api/cliente/eliminar/1715252302",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movimiento",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:8080/api/movimiento/crear",
+					"request": {
+						"url": "http://localhost:8080/api/movimiento/historial",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cedula\": 1715252302,\n\t\"fecha_Desde\": \"2022-02-01\",\n\t\"fecha_Hasta\": \"2022-03-01\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/movimiento/crear",
+					"request": {
+						"url": "http://localhost:8080/api/movimiento/crear",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cedula\": \"1715152302\",\n\t\"contraseña\": \"12354565\",\n\t\"numero_Cuenta\": 152252333,\t\n\t\"tipoMovimiento\": \"1\",\n\t\"monto\": 1000,\n\t\"tipoCuenta\": 1\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cuenta",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:8080/api/cuenta/listaCuentas",
+					"request": {
+						"url": "http://localhost:8080/api/cuenta/listaCuentas",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/cuenta/listaCuentas",
+					"request": {
+						"url": "http://localhost:8080/api/cuenta/crear",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"numero_cuenta\": 152252333,\n        \"tipo_cuenta\": \"1\",\n        \"saldo_inicial_cuenta\": 500,\n        \"estado_cuenta\": 1,\n        \"cliente\": {\n            \"contrasena_cliente\": \"123xyux\",\n            \"estado_cliente\": 1,\n            \"id_persona\": 3,\n            \"persona\": {\n                \"nombre_persona\": \"PruebaEdicion123\",\n                \"edad_persona\": 35,\n                \"identificacion_persona\": \"1715152302\",\n                \"genero_persona\": \"Masculino\",\n                \"dirreccion_persona\": \"Av Prueba WWW\",\n                \"telefono_persona\": \"0988599961\"\n            }\n        }\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/cuenta/listaCuentas",
+					"request": {
+						"url": "http://localhost:8080/api/cuenta/editar/1715152302",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"numero_cuenta\": 152252333,\n        \"tipo_cuenta\": \"1\",\n        \"saldo_inicial_cuenta\": 1500,\n        \"estado_cuenta\": 1,\n        \"cliente\": {\n            \"contrasena_cliente\": \"123xyux\",\n            \"estado_cliente\": 1,\n            \"persona\": {\n                \"nombre_persona\": \"PruebaEdicion123\",\n                \"edad_persona\": 35,\n                \"identificacion_persona\": \"1715152302\",\n                \"genero_persona\": \"Masculino\",\n                \"dirreccion_persona\": \"Av Prueba WWW\",\n                \"telefono_persona\": \"0988599961\"\n            }\n        }\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/cuenta/eliminar/152252333",
+					"request": {
+						"url": "http://localhost:8080/api/cuenta/eliminar/152252333",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -49,7 +49,19 @@ public class ClienteController {
 		}
         return listaRetorno;
     }
- 
+
+    @GetMapping("/cliente/buscarClientes/{id}")
+    public Cliente buscarClientes(@PathVariable("id") String id)
+    {
+    	Cliente listaRetorno = new Cliente();
+    	try {
+    		listaRetorno = clienteService.buscarCliente(id);
+		} catch (Exception e) {
+			throw new RuntimeException("No se encuentran registros");
+		}
+        return listaRetorno;
+    }
+
     @PutMapping("/cliente/editar/{id}")
     public String editar(@RequestBody Cliente clienteEdit,@PathVariable("id") String id)
     {
